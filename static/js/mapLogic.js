@@ -13,7 +13,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 var layerGroup = L.layerGroup().addTo(mymap);
 
 function createMarker(neighbour){
-  d3.csv("../data/listings_details.csv").then((data)=>{
+  d3.csv("static/data/listings_details.csv").then((data)=>{
     // Loop through the data array and create one marker for each listing, bind a popup containing its name and review add it to the map
     //console.log(data);
     //console.log(`Hello`)
@@ -49,15 +49,16 @@ function init(){
   
   // select dropdown menu
   var dropdown =  d3.select('#zipCode');
+  
   //read the data
-  d3.csv("../data/neighbourhoods.csv").then((data1)=>{
+  d3.csv("static/data/neighbourhoods.csv").then((data1)=>{
     console.log(data1)
     //get the zip data to the dropdown menu
+    
     for(j=0;j<data1.length;j++){
       var area = data1[j].neighbourhood
       dropdown.append("option").text(area).property("value");
-    }  
-});
+    };  
+  });
 };
-
-init();
+init()
