@@ -15,8 +15,8 @@ var layerGroup = L.layerGroup().addTo(mymap);
 function createMarker(neighbour){
   d3.csv("../data/listings_details.csv").then((data)=>{
     // Loop through the data array and create one marker for each listing, bind a popup containing its name and review add it to the map
-    console.log(data);
-    console.log(`Hello`)
+    //console.log(data);
+    //console.log(`Hello`)
     
     for (var i = 0; i < data.length; i++) {
       if(neighbour===data[i].zipcode){
