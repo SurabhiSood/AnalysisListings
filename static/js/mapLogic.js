@@ -31,7 +31,7 @@ function createMarker(neighbour){
         L.circle([listing.latitude,listing.longitude],{
           radius: 100,
           color: color
-        }).bindPopup("<h5>" + listing.name + "</h5><hr><h6>Review " + listing.review_scores_rating/20 +"</h6>"+"<hr><h6>Price"+listing.price +"</h6>"+ "<hr><h6>Available:" + listing.room_type + "</h6>")
+        }).bindPopup("<h5>" + listing.name + "</h5><hr><h6>Review: "+listing.review_scores_rating/20+ "<hr><h6>Host: "+listing.host_name +"</h6>"+"<hr><h6>Price/Night: "+listing.price +"</h6>"+ "<hr><h6>Available: " + listing.room_type + "</h6>"+"<hr><h6>Location: " + listing.city + "</h6>")
         .addTo(layerGroup);
       }
     }
