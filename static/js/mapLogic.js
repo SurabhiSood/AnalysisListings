@@ -13,7 +13,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 var layerGroup = L.layerGroup().addTo(mymap);
 
 function createMarker(neighbour){
-  d3.csv("static/data/listings_details.csv").then((data)=>{
+  d3.csv("static/data/map_details.csv").then((data)=>{
     // Loop through the data array and create one marker for each listing, bind a popup containing its name and review add it to the map
     //console.log(data);
     //console.log(`Hello`)
@@ -22,7 +22,7 @@ function createMarker(neighbour){
       if(neighbour===data[i].zipcode){
         var listing = data[i];
 
-        if((listing.review_scores_rating/10)==10){
+        if((listing.review_scores_rating/20)==5){
           color = "green"
         }else{
           color = "red"
@@ -31,7 +31,7 @@ function createMarker(neighbour){
         L.circle([listing.latitude,listing.longitude],{
           radius: 100,
           color: color
-        }).bindPopup("<h5>" + listing.name + "</h5><hr><h6>Review " + listing.review_scores_rating/10 +"</h6>"+"<hr><h6>Price"+listing.price +"</h6>"+ "<hr><h6>Available:" + listing.room_type + "</h6>")
+        }).bindPopup("<h5>" + listing.name + "</h5><hr><h6>Review " + listing.review_scores_rating/20 +"</h6>"+"<hr><h6>Price"+listing.price +"</h6>"+ "<hr><h6>Available:" + listing.room_type + "</h6>")
         .addTo(layerGroup);
       }
     }

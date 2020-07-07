@@ -1,57 +1,162 @@
-#map
-{
-    width: 100px;
-    height:100px;
-    min-height: 100%;
-    min-width: 100%;
-    display:block;
+/* Body */
+html, body{
+  background-color: #EDEDED;
+  width: 100%;
+  height: 100%
 }
 
-html, body
-{
-    height: 100%;
-}
-
-#map-holder{
-    height: 100%;
-}
-
-.fill
-{
-    min-height: 100%;
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-}
-
-/* for map */
-.container1{   
-    float: right;
-    max-width:60em;
-    padding: 0.4em;
-}
-
-/* zip code and other forms */
-.container2{
-    float: left;
-    height: 100%;
-    max-width:100%;
-    padding: 0.4em;
+/* Paragraph element */
+p{
+  text-align: justify;
  }
 
- .jumbotron{
-     background-image: url(https://www.wallpaperup.com/uploads/wallpapers/2016/09/30/1021583/27dc554d523ef3513f391ac1fb28ca38-700.jpg);
-     text-align: center;
-     padding-left: 0.4em;
-     padding-right: 0.4em;
-     margin-bottom: 0;
-     
+a{
+  color: #0a61e2;
+  font-size: 15px; 
 }
 
-.multicolortext {
-    background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
+/* Map ID */
+/* Set height of map */
+#ratingsmapid {height: 600px; width: 800px;}
+#hoodsbyratingsmapid {height: 100%; width: 100%;}
+#hoodsbypricesmapid {height: 100%; width: 100%;}
+
+/* Navbar */
+.navigation{
+  margin-left: 30px; 
+  padding: inherit; 
+  font-weight: bold; 
+  background-color: #139ba5;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar-brand{
+  color: white; 
+  margin-left: 30px; 
+  padding: inherit; 
+  font-weight: bold; 
+  background-color: #13a56d;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.navbar-brand:hover{
+  color: rgb(175, 175, 175) !important;
   }
+
+.navbar{
+  max-height: 57px; 
+  background-color: white; 
+  font-size: 15px; 
+}
+.nav-link:hover{
+  background-color:#E7E7E7 !important;
+  float: right;
+ }
+
+.active, .dropdown-menu .dropdown-item:active a:hover{
+  background-color:#E7E7E7!important; 
+
+}
+.dropdown-item{
+  color: #6D8092 !important; 
+}
+
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
+  background-color:#E7E7E7 !important; 
+}
+
+/* Images */
+/* #dashboardimg{
+  width:100% !important;
+  height:100% !important;
+} */
+.activeimage:hover{
+  border-color:#13a56d;
+  border-style: solid; 
+ 
+} 
+/* For Asheville image */
+/* #ashevilleimage{
+  width: 100%;
+  height: 100%;
+} */
+
+.panel:hover{
+  border-color:#13a56d;
+  border-style: solid; 
+
+}
+
+.vizualization{
+  width:50% !important;
+  height:50% !important;
+}
+
+
+/* Title Class  */
+.title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder; 
+  padding-top: 25px; 
+}
+
+/* Box Class*/
+.box {
+  margin-top: 60px; 
+  margin-bottom: 62px; 
+  padding: 10px 20px 15px; 
+  color:black;
+  background-color: white; 
+}
+
+/* Table */
+.table{
+  font-size: 15px; 
+  border-top-color: white !important; 
+}
+
+/* Footer */
+footer{
+background-color: #666666; 
+border-top-style: solid; 
+border-top-width: 5px; 
+border-top-color: #13a56d;
+color: white; 
+min-height: 55px; 
+font-family: Arial, Helvetica, sans-serif;
+font-size: 15px; 
+text-align: center; 
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+padding-top: 15px; 
+}
+
+/* Media Queries */
+@media(max-width: 992px){
+.navbar-expand-lg{
+background-color: #13a56d !important;
+}
+.navbar{
+  max-height: none; 
+  padding: inherit;
+}
+.navbar div{
+  margin: inherit; 
+  background-color: white;  
+}
+.navbar-brand{
+  padding: 10px !important; 
+}
+
+button{
+  margin-right: 30px; 
+}
+button:focus {
+
+  outline: 1px dotted;
+  /* outline: 5px auto -webkit-focusring-color; */
+  
+  }
+}
+  

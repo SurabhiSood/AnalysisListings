@@ -13,28 +13,20 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/static/css/ss_style.css">
 </head>
 
-<body style="background-color:floralwhite ;">
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><b>Stay-Listings 'Dataset Mining @Asheville'</b></h1>
-        <a href="/templates/Attraction.html" class="btn btn-primary" role="button">Attractions</a>
-      <a href="#" class="btn btn-primary" role="button">Pricing</a>
-    </div>
-  </div>
+<body>  
 
   
-
-  <!-- The div where we will inject our map -->
   <div id="map-holder">
 
+    <!-- The div where we will inject our map -->
     <div class="container1 fill">
       <div id="map"></div>
     </div>
 
+    <!-- The div where we will inject dropdown -->
     <div class="container2">
       <h5>Filter by Zip Code:</h5>
       <select id="zipCode" onchange="optionChanged(this.value)"></select>
