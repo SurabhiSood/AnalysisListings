@@ -15,7 +15,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 
 # Create engine
-# conn_str = 'postgres://yoyqxloquekucy:8328f25bf2390670b4035437fdf6329cfcd035d476d4bfc89e49f128471ee4f9@ec2-54-165-36-134.compute-1.amazonaws.com:5432/daafhqmf1lebno'
+
 # engine = create_engine(conn_str)
 
 # Reflect the database 
