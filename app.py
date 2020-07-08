@@ -10,19 +10,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-@app.route('/dropdown')
-def dropdown():
-    # Create session to link to the heroku Postgres database
-    session = Session(bind=engine)
-    dropdown = db.session.query(zipcode).all()
-
-    #create an empty list
-    drop_zip = []
-    for dz in dropdown:
-        zipcode = []
-        zipcode['neighbourhood']
-
-
+@app.route('/')
+def map_ratings():
+    return render_template('map_reviews.html')
 
 if __name__== '__main__':
     app.run(debug=True)
