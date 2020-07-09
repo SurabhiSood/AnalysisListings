@@ -1,9 +1,0 @@
-@app.route('/dropdown')
-def zipcodeDropdown():
-    results = db.session.query(zippy.neighbourhood).all()
-
-    zip=[]
-    for z in results:
-        zip.append(z)
-
-    return jsonify(zip)

@@ -13,25 +13,25 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 var layerGroup = L.layerGroup().addTo(mymap);
 
 function createMarker(neighbour){
-  d3.csv("static/data/map_details.csv").then((data)=>{
+  d3.json("/map").then((data)=>{
     // Loop through the data array and create one marker for each listing, bind a popup containing its name and review add it to the map
     console.log(data);
-    //console.log(`Hello`)
     
     for (var i = 0; i < data.length; i++) {
-      if(neighbour===data[i].zipcode){
+      if(neighbour===data[i]['Zipcode']) {
         var listing = data[i];
+        console.log(listing);
 
-        if((listing.review_scores_rating/20)==5){
+        if((listing.Reviews/20)==5){
           color = "green"
         }else{
           color = "red"
         }
 
-        L.circle([listing.latitude,listing.longitude],{
+        L.circle([listing.Latitude,listing.Longitude],{
           radius: 100,
           color: color
-        }).bindPopup("<h5>" + listing.name + "</h5><hr><h6>Review: "+listing.review_scores_rating/20+ "<hr><h6>Host: "+listing.host_name +"</h6>"+"<hr><h6>Price/Night: "+listing.price +"</h6>"+ "<hr><h6>Available: " + listing.room_type + "</h6>"+"<hr><h6>Location: " + listing.city + "</h6>")
+        }).bindPopup("<h5>" + listing.Name + "</h5><hr><h6>Review: "+listing.Reviews/20+ "<hr><h6>Host: "+listing.Host +"</h6>"+"<hr><h6>Price/Night: "+listing.Price +"</h6>"+ "<hr><h6>Available: " + listing.Available + "</h6>"+"<hr><h6>Location: " + listing.City + "</h6>")
         .addTo(layerGroup);
       }
     }
@@ -51,15 +51,16 @@ function init(){
   var dropdown =  d3.select('#zipCode');
   
   //read the data
-  d3.csv("static/data/zipcode.csv").then((data1)=>{
+  d3.json("/dropdown").then((data1)=>{
     console.log(data1)
     //get the zip data to the dropdown menu
     
     for(j=0;j<data1.length;j++){
-      var area = data1[j].neighbourhood
+      var area = data1[j][0]
+      //console.log(area)
       dropdown.append("option").text(area).property("value");
     };  
   });
 };
-init()
 
+init();

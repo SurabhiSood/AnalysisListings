@@ -44,10 +44,10 @@
   crossorigin=""></script>
   
   <!-- API key -->
-  <script type="text/javascript" src="/static/js/config.js"></script>
+  <script src="{{ url_for('static', filename='js/config.js') }}"></script>
   
   <!-- JS -->
-  <script type="text/javascript" src="/static/js/mapLogic.js"></script>
+  <script src="{{ url_for('static', filename='js/mapLogic.js') }}"></script>
   
 </body>
 </html>
