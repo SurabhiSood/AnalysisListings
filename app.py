@@ -35,6 +35,10 @@ Table_map = Base.classes.map_details
 def map_ratings():
     return render_template('map_reviews.html')
 
+@app.route('/p')
+def map_price():
+    return render_template('price.html')
+
 @app.route("/dropdown")
 def zipcodeDropdown():
 

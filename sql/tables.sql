@@ -25,7 +25,7 @@ create table map_details(
 	accommodates BIGINT,
 	bathrooms double precision,
 	bedrooms BIGINT,
-	price VARCHAR(55),
+	price BIGINT,
 	security_deposit VARCHAR(55),
 	cleaning_fee VARCHAR(55),
 	review_scores_rating double precision,
