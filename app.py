@@ -30,12 +30,15 @@ Table_map = Base.classes.map_details
 
 # ['zipcode', 'map_details']
 
-
 @app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/Features')
 def map_ratings():
     return render_template('map_reviews.html')
 
-@app.route('/p')
+@app.route('/price')
 def map_price():
     return render_template('price.html')
 

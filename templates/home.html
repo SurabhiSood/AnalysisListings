@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>About Analysis</title>
+
+        <!--Bootstrap CSS-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Our CSS -->
+        <style>
+            .multicolortext {
+            background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red, violet, indigo, green, blue, yellow, orange, red);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: xx-large;
+            font-stretch: expanded;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            .container{
+                padding-top: 1em;
+                margin-left: 12em;            
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <!--Navbar Begins-->
+        <nav class="navbar navbar-expand-lg bg-dark" style="margin-bottom: 1em;">
+            <a class="multicolortext navbar-brand" href="#">Asheville</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" style="color: white;" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Visualizations</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url_for('map_ratings') }}">Features</a>
+                        <a class="dropdown-item" href="{{ url_for('map_price') }}">Pricing</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </nav>
+        <!--Navbar Ends-->
+  
+    
+    
+        <div class="container">
+            <div class="row" style="justify-content: center;">
+                <h2>Exploratory Data Analysis and Visualization of Airbnb Dataset</h2>
+                </br></br></br></br>
+            </div>
+
+            <div class="row" >
+                <div class="card">
+                    <div class="card-body">
+                        <p>-Introduction</p>
+                        <p>Hello, Welcome to my app. I have tried to achieve exploratory data analysis for Airbnbs @Asheville through, map visualizations, interactive plots, animations and lots of other interesting javascript libraries.</p>
+                        <p>- My Quest with this dataset was to analyze:</p>
+                        
+                        <ul>
+                            <li>How do prices of listings vary by location?</li>
+                            <li>What are the different types of properties in Asheville? Do they vary by neighborhood?</li>
+                            <li>What localities in Asheville are rated highly by guests?</li>
+                            <li>What makes a host Super host?</li>
+                        </ul>
+
+                        <p>- Data was sourced from http://insideairbnb.com/get-the-data.html and the main tables I worked on were:</p>
+                    
+                        <ol>
+                            <li>
+                                listings - Detailed listings data showing 96 atttributes for each of the listings. 
+                                Some of the attributes used in the analysis are price (continuous), longitude (continuous), 
+                                latitude (continuous), listing_type (categorical), is_superhost (categorical), neighbourhood (categorical), 
+                                ratings (continuous) among others.
+                            </li>
+            
+                            <li>
+                                reviews - Detailed reviews given by the guests with 6 attributes. Key attributes include date (datetime), 
+                                listing_id (discrete), reviewer_id (discrete) and comment (textual).
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!--Dropdown-->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+
+        </div>  
+    </body>
+</html>
