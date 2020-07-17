@@ -134,4 +134,11 @@ ETL&Engines.ipynb
 
 code 
 
+#csvs we dont need directly
 neighbourhoods.geojson
+calendar.csv
+reviews.csv
+reviews_details.csv
+
+
+
