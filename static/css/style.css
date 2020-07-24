@@ -3,9 +3,16 @@
     width: 700px;
     padding-top: 40px;
     margin-top: 40px;
-    padding-left: 40px;
-    margin-left: 40px;
+    /* padding-left: 40px;
+    margin-left: 40px; */
     }
+
+html, body
+{
+    height: 100%;
+    background-color: #EDEDED;
+    width: 100%;
+}
 
 .multicolortext {
     background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red, violet, indigo, green, blue, yellow, orange, red);
@@ -30,5 +37,9 @@
     margin-right: 8px;
     opacity: 0.7;
 }
-  
-   
+
+#line_chart
+{
+    float: right;
+}
+    

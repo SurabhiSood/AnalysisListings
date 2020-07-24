@@ -9,6 +9,14 @@
 
         <!-- Our CSS -->
         <style>
+            html, body
+            {
+            height: 100%;
+            /* background-color: #EDEDED; */
+            width: 100%;
+            margin: 0 !important;
+            padding: 0 !important;
+            }
             .multicolortext {
             background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red, violet, indigo, green, blue, yellow, orange, red);
             -webkit-background-clip: text;
@@ -23,85 +31,111 @@
             .container{
                 padding-top: 1em;
                 margin-left: 12em;            
-            }
+            }            
         </style>
 
     </head>
 
     <body>
-
+        <canvas id="canvas-image-blending" width="1120px" height="150px" style="position: absolute; height: 150%; width: 100%; z-index: -1; background-size: cover; background-position: 100%;"></canvas>
+              
         <!--Navbar Begins-->
         <nav class="navbar navbar-expand-lg bg-dark" style="margin-bottom: 1em;">
             <a class="multicolortext navbar-brand" href="#">Asheville</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-        </button>
+            </button>
         
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
-                </li>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color: white;" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+                    </li>
                 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Visualizations</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ url_for('map_ratings') }}">Features</a>
-                        <a class="dropdown-item" href="{{ url_for('map_price') }}">Pricing</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Visualizations</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{{ url_for('map_ratings') }}">Ratings</a>
+                            <a class="dropdown-item" href="{{ url_for('map_price') }}">Pricing</a>
+                            <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </nav>
         <!--Navbar Ends-->
-  
-    
-    
-        <div class="container">
-            <div class="row" style="justify-content: center;">
-                <h2>Exploratory Data Analysis and Visualization of Airbnb Dataset</h2>
-                </br></br></br></br>
-            </div>
-
-            <div class="row" >
-                <div class="card">
-                    <div class="card-body">
-                        <p>-Introduction</p>
-                        <p>Hello, Welcome to my app. I have tried to achieve exploratory data analysis for Airbnbs @Asheville through, map visualizations, interactive plots, animations and lots of other interesting javascript libraries.</p>
-                        <p>- My Quest with this dataset was to analyze:</p>
-                        
-                        <ul>
-                            <li>How do prices of listings vary by location?</li>
-                            <li>What are the different types of properties in Asheville? Do they vary by neighborhood?</li>
-                            <li>What localities in Asheville are rated highly by guests?</li>
-                            <li>What makes a host Super host?</li>
-                        </ul>
-
-                        <p>- Data was sourced from http://insideairbnb.com/get-the-data.html and the main tables I worked on were:</p>
-                    
-                        <ol>
-                            <li>
-                                listings - Detailed listings data showing 96 atttributes for each of the listings. 
+        
+            <div class="container">
+                <div class="row" style="justify-content: center;">
+                    <h2>Exploratory Data Analysis and Visualization of Airbnb Dataset</h2>
+                    </br></br></br></br>
+                </div>
+        
+                <div class="row" >
+                    <div class="card">
+                        <div class="card-body">
+                            
+                            <p style="text-align: justify ;">
+                                Hola! bienvido a mi applicacion. My work presents exploratory data analysis for Airbnbs @Asheville through, 
+                                map visualizations, interactive plots, animations and lots of other interesting javascript libraries.
+                            </p>
+                                    
+                            <p>My Quest with this dataset was to analyze:</p>
+                            <ul>
+                                <li>How do prices of listings vary by location?</li>
+                                <li>What are the different types of properties in Asheville? Do they vary by neighborhood?</li>
+                                <li>What localities in Asheville are rated highly by guests?</li>
+                                <li>What makes a host Super host?</li>
+                            </ul>
+                            
+                            <p>Data was sourced from http://insideairbnb.com/get-the-data.html. Brief Description of the data i worked on</p>
+                            <ul>
+                                <li>Detailed listings - data showing 96 atttributes for each of the listings. 
                                 Some of the attributes used in the analysis are price (continuous), longitude (continuous), 
                                 latitude (continuous), listing_type (categorical), is_superhost (categorical), neighbourhood (categorical), 
-                                ratings (continuous) among others.
-                            </li>
-            
-                            <li>
-                                reviews - Detailed reviews given by the guests with 6 attributes. Key attributes include date (datetime), 
-                                listing_id (discrete), reviewer_id (discrete) and comment (textual).
-                            </li>
-                        </ol>
+                                ratings (continuous) among others.</li>
+                            </ul>
+                            <p>The data shows that there are:</p>
+                            <ul>
+                                <li> There are 2,387 unique listings in Asheville. First host was listed on October 23, 2009. </li>
+                                <li> Price per night ranges from $10 to $250. The most expensive property is Southern Gem located at downtown Asheville</li>
+                                <li> You can rent a whole Castle too! </li>
+                            </ul>
+                                <img src="https://www.romanticasheville.com/sites/default/files/images/basic_page/downtown-asheville.jpg" height="33%" width="33%">
+                                <img src="https://media2.trover.com/T/54ac35d5d6bdd4677400c6ed/fixedw_large_4x.jpg" height="33%" width="33%">
+                                <img src="https://media.glampinghub.com/CACHE/images/accommodations/unique-luxurious-tree-house-hotel-with-a-spacious-wrap-around-deck-1563462442144/41347ac60271899e7c3520b1df3324d8.jpg" height="33%" width="33%">
+                        </div>
                     </div>
                 </div>
+
             </div>
-
-            <!--Dropdown-->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
-
-        </div>  
+        <script src="static/js/granim.js/dist/granim.min.js"></script>
+        <script>
+            var granimInstance = new Granim({
+                element: '#canvas-image-blending',
+                direction: 'top-bottom',
+                isPausedWhenNotInView: true,
+                image : {
+                    source: 'https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpeg',
+                    blendingMode: 'multiply'
+                },
+                states : {
+                    "default-state": {
+                        gradients: [
+                            ['#29323c', '#485563'],
+                            ['#FF6B6B', '#556270'],
+                            ['#80d3fe', '#7ea0c4'],
+                            ['#f0ab51', '#eceba3']
+                        ],
+                        transitionSpeed: 7000
+                    }
+                }
+            });
+        </script>
+        
+        <!--Dropdown-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
     </body>
 </html>

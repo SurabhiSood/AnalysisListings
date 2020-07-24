@@ -14,6 +14,7 @@
 
     <!-- Our CSS -->
     <link rel='stylesheet' type="text/css" href='/static/css/style.css'>
+
   </head>
 
   <body>
@@ -33,9 +34,9 @@
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="color: white;">Visualizations</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="{{ url_for('map_ratings') }}">Features</a>
+                      <a class="dropdown-item" href="{{ url_for('map_ratings') }}">Ratings</a>
                       <a class="dropdown-item" href="{{ url_for('map_price') }}">Pricing</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <!-- <a class="dropdown-item" href="#">Something else here</a> -->
                   </div>
               </li>
           </ul>
@@ -43,10 +44,40 @@
     </nav>
   <!--Navbar Ends-->  
 
-  <div class="container" style="float: left;">
-    <div id="map"></div>
+  <div class="container-fluid" style="padding-top: 25px;">
+    <div class="row" style="justify-content: center;">
+      <h2>Pricing, Properties and Progress of AirBnB</h2>
+      </br>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <br/>
+        <div id="map" style="height: 800px; width: 800px;"></div>
+        <div>
+          <p style="text-align: justify;">
+            <br/>
+            This map follows from our previous location ratings by neighbourhood map. Now it is obvious
+            that the highly rated location would also tend to be costly (demand vs supply). This graph 
+            would be a good opportunity to put our previous results to test.Again downtown Asheville is
+            the clear winner when it comes to high rents followed by Biltmore. 
+          </p>   
+        </div>
+      </div>
+      <div class='col-md'>
+        <br/><br/>
+        <p style="text-align: justify; margin-left: 20px;">
+          It is interesting to note that there has been a decline in number of 'new listings' in the recent years!
+          Hosting trends were at peak around 2015, when we saw most number of new listings.
+          Given that the total number of AirBnBs in and around the area are 2,387.It does look that the 'Bed & Breakfast' market has
+          reached a saturation.
+        </p>
+        <div id='line_chart' style="height: 500px; width: 700px;"></div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <div id='pie' style="height: 500px; width: 700px; float:right;"></div>
+      </div>
+    </div>
   </div>
-
+       
   <!--Dependencies-->
   <!-- D3 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
@@ -60,6 +91,8 @@
   
   <!-- JS -->
   <script src="{{ url_for('static', filename='js/pricing.js') }}"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/plotlyCharts.js') }}"></script>
 
   <!--Dropdown-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -16,66 +16,127 @@
     <link rel="stylesheet" type="text/css" href="/static/css/ss_style.css">
   </head>
 
-  <body> 
-
+  <body>
     <!--Navbar Begins-->
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark" style="margin-bottom: 32px;" >
       <a class="multicolortext navbar-brand" href="#">Asheville</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
       
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-              <li class="nav-item active">
-                  <a class="nav-link" style="color: white;" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
-              </li>
-              
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Visualizations</a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="{{ url_for('map_ratings') }}">Features</a>
-                      <a class="dropdown-item" href="{{ url_for('map_price') }}">Pricing</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-              </li>
-          </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" style="color: white;" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">Visualizations</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{ url_for('map_ratings') }}">Ratings</a>
+                <a class="dropdown-item" href="{{ url_for('map_price') }}">Pricing</a>
+                <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+              </div>
+          </li>
+        </ul>
       </div>
     </nav>
-  <!--Navbar Ends-->
+    <!--Navbar Ends-->
   
-  <div id="map-holder" style="background-color:whitesmoke">
-  <!-- The div where we will inject our map -->
-    <div class="container1 fill">
+    <div id="map-holder">
+        <div class="row" style="justify-content: center;">
+        <h2>Visual Representation of 'Star Ratings' in the Area</h2>
+      </div>
+    <!-- The div where we will inject our map -->
+      <div class="container1 fill" style="padding-top: 25px;">
+        <h5>Filter by Zip Code:</h5>
+        <select id="zipCode" onchange="optionChanged(this.value)"></select>
+        </br></br>
       <div id="map"></div>
-    </div>
-
-    <!-- The div where we will inject dropdown -->
-    <div class="container2">
-      <h5>Filter by Zip Code:</h5>
-      <select id="zipCode" onchange="optionChanged(this.value)"></select>
-      </br></br>
-
-    <div class="card">
-      <div class="card-body">
-        <p style="text-align: justify;">
-          This is the basic interactive graph with all the listing in Asheville City appearing in a clustered fashion. 
-          User can click on each marker to see the details of each listing like Listing Name, Host Name, Price of the property, 
-          Property Type, Room Type. This visualization helps to explore every listing geographically. 
-          It gives the overall sense of how the listings are distributed across neighborhood. 
-          We can see from the map that maximum listing are clustered around 'Bent Creek' and 'Asheville Downtown' 
-          followed by 'Biltimore Forest' and 'Woodfin'.
-        </p>
-        <p style="text-align: justify;">Ratings for hosts from 1 (worst) to 5 (best) for the overall experience 
+        </br></br>
+        <!--<div class="card">
+          <div class="card-body">-->
+            <p style="text-align: justify;">
+            This is the basic interactive graph with all the listings in Asheville City, appearing in a clustered fashion. 
+            User can chose a particular zip code and click on markers to see the details of listing like Listing Name, Host Name, 
+            Price of the property, Property Type, Room Type. This visualization helps to explore every listing geographically. 
+            It gives the overall sense of how the listings are distributed across neighborhood. 
+            We can see from the map that maximum listing are clustered around 'Bent Creek' and 'Asheville Downtown' 
+            followed by 'Biltimore Forest' and 'Woodfin'.
+            </p>
+            <p style="text-align: justify;">
+            Ratings for hosts from 1 (worst) to 5 (best) for the overall experience 
             and for specific categories,including: overall experience,cleanliness,accuracy, 
             value,communication,check-in,and location. Host needs to get 3 star ratings 
             before their overall rating appears on the listing or profile.
-                  PS - use zoom buttons to locate Air BnBs
-        </p>
+            PS - use zoom buttons to locate Air BnBs
+            </p>
+            <p style="text-align: justify;">
+              <b>Asheville Downtown</b> receives the highest location scores followed by <b>Biltmore Forest</b>.    
+            </p>               
+          <!--</div>
+        </div>-->
+      </div>
+    
+    
+      <!-- The div where we will inject dropdown -->
+      <div class="container2" style="padding-top: 12px;">
+      </br></br></br>
+      <table class="table table-striped"> 
+        <thead>    
+          <tr style="text-align: right;">      
+            <th> Neighbourhood </th>      
+            <th> AirBnBs in the Area </th>      
+            <th> Location </th>    
+          </tr>  
+        </thead> 
+        <tbody>    
+          <tr>      
+            <td>28704</td>      
+            <td>135</td>      
+            <td>Arden</td> 
+          </tr>
+          <tr>   
+            <td>28715</td>
+            <td>49</td>     
+            <td>Candler</td>
+          </tr>
+          <tr>      
+            <td>28732</td>     
+            <td>51</td>      
+            <td>Fletcher</td>    
+          </tr>    
+          <tr>      
+            <td>28801</td>       
+            <td>586</td>      
+            <td>Asheville Downtown</td>   
+          </tr>  
+          <tr>     
+            <td>28803</td>        
+            <td>335</td>     
+            <td>Biltmore Forest</td>   
+          </tr>
+          <tr>      
+            <td>28804</td>         
+            <td>292</td>      
+            <td>Woodfin</td>    
+          </tr>   
+          <tr>     
+            <td>28805</td>       
+            <td>272</td>      
+            <td>Azalea</td>    
+          </tr>    
+          <tr>     
+            <td>28806</td>      
+            <td>667</td>      
+            <td>Bent Creek</td>    
+          </tr>
+        </tbody>
+      </table>
+      <canvas id="myChart"></canvas>
       </div>
     </div>
-   </div>
-  </div>
+  
+  
 
   <!--Dependencies-->
   <!-- D3 -->
@@ -91,11 +152,15 @@
   
   <!-- JS -->
   <script src="{{ url_for('static', filename='js/mapLogic.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
 
   <!--Dropdown-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>     
+  
+  <!--Charts.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
   
   </body>
 </html>

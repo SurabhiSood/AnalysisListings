@@ -12,6 +12,21 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 var layerGroup = L.layerGroup().addTo(mymap);
 
+/*Legend specific*/
+var legend = L.control({ position: "bottomleft" });
+
+legend.onAdd = function(map) {
+var div = L.DomUtil.create("div", "legend");
+div.innerHTML += "<h4>Star Ratings</h4>";
+div.innerHTML += '<i style="background: #12801b"></i><span>5</span><br>';
+div.innerHTML += '<i style="background: #350ee3"></i><span>>=4</span><br>';
+div.innerHTML += '<i style="background: #db2121"></i><span>=<3</span><br>';
+
+return div;
+};
+
+legend.addTo(mymap);
+
 function createMarker(neighbour){
   d3.json("/map").then((data)=>{
     // Loop through the data array and create one marker for each listing, bind a popup containing its name and review add it to the map
