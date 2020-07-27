@@ -96,36 +96,36 @@ function Granim(options) {
 	this.canvas.dispatchEvent(this.events.start);
 }
 
-Granim.prototype.animateColors = require('./animateColors.js');
-Granim.prototype.changeBlendingMode = require('./changeBlendingMode.js');
-Granim.prototype.changeDirection = require('./changeDirection.js');
-Granim.prototype.changeState = require('./changeState.js');
-Granim.prototype.clear = require('./clear.js');
-Granim.prototype.convertColorToRgba = require('./convertColorToRgba.js');
-Granim.prototype.destroy = require('./destroy.js');
-Granim.prototype.eventPolyfill = require('./eventPolyfill.js');
-Granim.prototype.getColor = require('./getColor.js');
-Granim.prototype.getColorDiff = require('./getColorDiff.js');
-Granim.prototype.getColorPos = require('./getColorPos.js');
-Granim.prototype.getColorPosDiff = require('./getColorPosDiff.js');
-Granim.prototype.getCurrentColors = require('./getCurrentColors.js');
-Granim.prototype.getCurrentColorsPos = require('./getCurrentColorsPos.js');
-Granim.prototype.getDimensions = require('./getDimensions.js');
-Granim.prototype.getElement = require('./getElement.js');
-Granim.prototype.getLightness = require('./getLightness.js');
-Granim.prototype.makeGradient = require('./makeGradient.js');
-Granim.prototype.onResize = require('./onResize.js');
-Granim.prototype.onScroll = require('./onScroll.js');
-Granim.prototype.pause = require('./pause.js');
-Granim.prototype.pauseWhenNotInView = require('./pauseWhenNotInView.js');
-Granim.prototype.play = require('./play.js');
-Granim.prototype.prepareImage = require('./prepareImage.js');
-Granim.prototype.refreshColorsAndPos = require('./refreshColorsAndPos.js');
-Granim.prototype.setColors = require('./setColors.js');
-Granim.prototype.setDirection = require('./setDirection.js');
-Granim.prototype.setSizeAttributes = require('./setSizeAttributes.js');
-Granim.prototype.triggerError = require('./triggerError.js');
-Granim.prototype.validateInput = require('./validateInput.js');
+Granim.prototype.animateColors = require('./animateColors.js.js');
+Granim.prototype.changeBlendingMode = require('./changeBlendingMode.js.js');
+Granim.prototype.changeDirection = require('./changeDirection.js.js');
+Granim.prototype.changeState = require('./changeState.js.js');
+Granim.prototype.clear = require('./clear.js.js');
+Granim.prototype.convertColorToRgba = require('./convertColorToRgba.js.js');
+Granim.prototype.destroy = require('./destroy.js.js');
+Granim.prototype.eventPolyfill = require('./eventPolyfill.js.js');
+Granim.prototype.getColor = require('./getColor.js.js');
+Granim.prototype.getColorDiff = require('./getColorDiff.js.js');
+Granim.prototype.getColorPos = require('./getColorPos.js.js');
+Granim.prototype.getColorPosDiff = require('./getColorPosDiff.js.js');
+Granim.prototype.getCurrentColors = require('./getCurrentColors.js.js');
+Granim.prototype.getCurrentColorsPos = require('./getCurrentColorsPos.js.js');
+Granim.prototype.getDimensions = require('./getDimensions.js.js');
+Granim.prototype.getElement = require('./getElement.js.js');
+Granim.prototype.getLightness = require('./getLightness.js.js');
+Granim.prototype.makeGradient = require('./makeGradient.js.js');
+Granim.prototype.onResize = require('./onResize.js.js');
+Granim.prototype.onScroll = require('./onScroll.js.js');
+Granim.prototype.pause = require('./pause.js.js');
+Granim.prototype.pauseWhenNotInView = require('./pauseWhenNotInView.js.js');
+Granim.prototype.play = require('./play.js.js');
+Granim.prototype.prepareImage = require('./prepareImage.js.js');
+Granim.prototype.refreshColorsAndPos = require('./refreshColorsAndPos.js.js');
+Granim.prototype.setColors = require('./setColors.js.js');
+Granim.prototype.setDirection = require('./setDirection.js.js');
+Granim.prototype.setSizeAttributes = require('./setSizeAttributes.js.js');
+Granim.prototype.triggerError = require('./triggerError.js.js');
+Granim.prototype.validateInput = require('./validateInput.js.js');
 
 module.exports = Granim;
 
@@ -1048,6 +1048,6 @@ function areDefinedInPixelsOrPercentage(array) {
 }
 
 },{}],32:[function(require,module,exports){
-window.Granim = require('./lib/Granim.js');
+window.Granim = require('./lib/Granim.js.js');
 
 },{"./lib/Granim.js":1}]},{},[32]);
