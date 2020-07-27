@@ -1,15 +1,14 @@
-### Goal-
+### Goal
 I wanted to create an app which presents the exploratory data analysis for AirBnBs @ Axheville.To view the app,click [here](https://surabhisood-project2.herokuapp.com/). 
 
-### Process-
-
-I started with sourcing the data from [insideairbnb](http://insideairbnb.com/get-the-data.html).Post data extraction, I had three major tasks at hand, one was to clean the data, second was to transform it into easy visualization and finaly to upload it on cloud.
+### Process
+I started with sourcing the data from [insideairbnb](http://insideairbnb.com/get-the-data.html). Post data extraction, I had three major tasks at hand, one was to clean the data, second was to transform it into easy visualization and finaly to upload it on cloud.
 
 Cleaning the data was done using Pandas. There were very few null values and post determining that null values will have very no effect on my analysis, I dropped those rows.
 
 Next came merging the tables based on the type of visualizations, such as chloropleth, I wanted to create. This included changing datatypes for quite of few variables.
 
-*Home Page* includes the basic html code, introducing the app and analysis details along with a fluid and interactive gradient animations with this small javascript library[granim.js](https://sarcadass.github.io/granim.js/).
+*Home Page* includes the basic html code, introducing the app and analysis details along with a fluid and interactive gradient animations with this small javascript library [granim.js](https://sarcadass.github.io/granim.js/).
 
 *Ratings Page* contains an html table briefly introducing the count of AirBnBs in the sorrounding zip codes. It also contains an interactive leaflet map. This map upon selection of a particular zip-code from the drop down shows the AirBnBs and its details such as Listing Name, Host Name, Price of the property, Property Type, Room Type and Ratings.The markers appear to be of different colors based on the Ratings.There is a bar chart on the page indicating the best locality based on location review scores, this visualization uses charts.js library.
 
