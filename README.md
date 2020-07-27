@@ -28,5 +28,9 @@ Next came merging the tables based on the type of visualizations, such as chloro
 
 *MapLogic.js* contain a function createMarkers() which reads data from the '/map' route and takes in neighbour as an argument. If the zipcode matches with the argument its lists all the details of AirBnB and assigns pre-defined color to the Rating. The init() function binds the dropdown from the html page, using d3. it then reads data from '/dropdown' route to populate the dropdown on html page. function optionChanged() calls upon the required functions on user input.
 
+### Heroku
+
+To deploy this dashboard on Heroku, I simply created a new app in Heroku and connected it to the corresponding GitHub repo. Then, I added a Procfile and requirements.txt file to my repo.
+
 
 
