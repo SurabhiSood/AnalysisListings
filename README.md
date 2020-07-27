@@ -1,5 +1,5 @@
 ### Goal
-I wanted to create an app which presents the exploratory data analysis for AirBnBs @ Axheville.To view the app,click [here](https://surabhisood-project2.herokuapp.com/). 
+I wanted to create an app which presents the exploratory data analysis for AirBnBs @ Asheville.To view the app,click [here](https://surabhisood-project2.herokuapp.com/). 
 
 ### Process
 I started with sourcing the data from [insideairbnb](http://insideairbnb.com/get-the-data.html). Post data extraction, I had three major tasks at hand, one was to clean the data, second was to transform it into easy visualization and finaly to upload it on cloud.
@@ -26,7 +26,7 @@ Next came merging the tables based on the type of visualizations, such as chloro
 	
 *charts.js* creates an instance of charts.js library and plots bar 	chart, post reading values from csv using d3.js. With the help of a 	for loop I extracted two lists for location and its score. These lists were then used as labels and its data in library instance to plot the bar chart.
 
-*MapLogic.js* contain a function createMarkers() which reads data from the '/map' route and takes in neighbour as an argument. If the zipcode matches with the argument its lists all the details of AirBnB and assigns pre-defined color to the Rating. The init() function binds the dropdown from the html page, using d3. it then reads data from '/dropdown' route to populate the dropdown on html page. function optionChanged() calls upon the required functions on user input.
+*MapLogic.js* contain a function createMarkers() which reads data from the ('/map') route and takes in neighbour as an argument. If the zipcode matches with the argument its lists all the details of AirBnB and assigns pre-defined color to the Rating. The init() function binds the dropdown from the html page, using d3. it then reads data from ('/dropdown') route to populate the dropdown on html page. function optionChanged() calls upon the required functions on user input.
 
 ### Heroku
 
