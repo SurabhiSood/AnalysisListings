@@ -19,9 +19,9 @@ Next came merging the tables based on the type of visualizations, such as chloro
 
 *Flask app* contains 5 routes. Three of them renders the three html pages described above. However two of them returns a jsonify list obtained from the csv files from the cloud server (Heroku_Postgress_SQL)
 
-	*dropdown route* contains list of neighbourhoods in the area.
+*dropdown route* contains list of neighbourhoods in the area.
 
-	*map route* contains details of AirBnBs namely Listing Name, Host Name, Price of the property, Property Type, Room Type and Ratings
+*map route* contains details of AirBnBs namely Listing Name, Host Name, Price of the property, Property Type, Room Type and Ratings
 
 **The js scripts**
 	
